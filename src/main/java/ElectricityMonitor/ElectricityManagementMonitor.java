@@ -37,6 +37,28 @@ public class ElectricityManagementMonitor {
 
         Scanner scanner = new Scanner(System.in);
 
+        JsonObject locationData = LocationService.getUserLocation();
+        if (locationData != null) {
+
+            String city = locationData.get("city").getAsString();
+
+
+            JsonObject weatherData = WeatherService.getCurrentWeather(city);
+            if (weatherData != null) {
+                double temperature = weatherData.getAsJsonObject("main").get("temp").getAsDouble();
+
+                if (temperature > 30) {
+                    System.out.println("Current temperature is " + temperature + " Celsius. It's hot! Consider lowering your power consumption.");
+                } else {
+                    System.out.println("Current temperature is " + temperature + " Celsius. The weather is good.");
+                }
+            } else {
+                System.out.println("Unable to retrieve weather data for " + city);
+            }
+        } else {
+            System.out.println("Failed to automatically determine your location.");
+        }
+
         System.out.print("Enter the name of the building: ");
         String buildingName = scanner.nextLine();
         Building building = new Building(buildingName);
