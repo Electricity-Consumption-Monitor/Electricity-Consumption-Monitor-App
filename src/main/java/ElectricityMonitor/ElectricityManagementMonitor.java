@@ -3,6 +3,7 @@ package ElectricityMonitor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import com.google.gson.JsonObject;
 
 public class ElectricityManagementMonitor {
     private static ElectricityManagementMonitor instance;
@@ -35,6 +36,7 @@ public class ElectricityManagementMonitor {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+
 
         System.out.print("Enter the name of the building: ");
         String buildingName = scanner.nextLine();
