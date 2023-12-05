@@ -37,20 +37,6 @@ public class ElectricityManagementMonitor {
 
         Scanner scanner = new Scanner(System.in);
 
-
-        System.out.print("Enter your city: ");
-        String city = scanner.nextLine();
-
-        JsonObject weatherData = WeatherService.getCurrentWeather(city);
-        if (weatherData != null) {
-            double temperature = weatherData.getAsJsonObject("main").get("temp").getAsDouble();
-
-            if (temperature > 30) {
-                System.out.println("Current temperature is "+ temperature + "Celsius. It's hot! Consider lowering your power consumption.");
-            } else
-                System.out.println("Current temperature is "+ temperature + "The weather is good.");
-        }
-
         System.out.print("Enter the name of the building: ");
         String buildingName = scanner.nextLine();
         Building building = new Building(buildingName);

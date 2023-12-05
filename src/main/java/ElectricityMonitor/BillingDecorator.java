@@ -13,5 +13,6 @@ class BillingDecorator implements ElectricityComponent {
         double additionalCost = component.calculateTotalElectricityBill() * 0.15;
         return component.calculateTotalElectricityBill() + additionalCost;
     }
+
 }
 

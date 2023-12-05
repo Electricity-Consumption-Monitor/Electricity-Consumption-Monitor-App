@@ -6,6 +6,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
 public class WeatherService {
 
     private static final String API_KEY = "533e1baa54a8cf659fed8ec2b8a060f5";
