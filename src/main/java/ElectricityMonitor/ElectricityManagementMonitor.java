@@ -30,9 +30,9 @@ public class ElectricityManagementMonitor {
         for (ElectricityComponent component : components) {
             totalElectricityBill += component.calculateTotalElectricityBill();
         }
-        return totalElectricityBill;
+        String formattedBill = String.format("%.5g", totalElectricityBill);
+        return Double.parseDouble(formattedBill);
     }
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -49,14 +49,13 @@ public class ElectricityManagementMonitor {
 
                 if (temperature > 30) {
                     System.out.println("Current temperature is " + temperature + " Celsius. It's hot! Consider lowering your power consumption.");
-                } else {
-                    System.out.println("Current temperature is " + temperature + " Celsius. The weather is good.");
+                } else if (temperature < 30) {
+                    System.out.println("Current temperature is " + temperature + " Celsius. The weather is good. No precautions needed ragarding the temperature");
                 }
             } else {
                 System.out.println("Unable to retrieve weather data for " + city);
             }
-        } else {
-            System.out.println("Failed to automatically determine your location.");
+
         }
 
         System.out.print("Enter the name of the building: ");

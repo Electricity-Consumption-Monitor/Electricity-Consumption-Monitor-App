@@ -3,7 +3,7 @@ package ElectricityMonitor;
 import java.util.ArrayList;
 import java.util.List;
 
-// Concrete Component
+
 class Building implements ElectricityComponent {
     private String name;
     private List<Room> rooms;

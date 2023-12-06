@@ -11,7 +11,7 @@ import com.google.gson.JsonParser;
 
 public class LocationService {
 
-    private static final String IPSTACK_API_KEY = "2e0428321da7b6bc992de51451bd6c1b"; // Replace with your actual IPStack API key
+    private static final String IPSTACK_API_KEY = "2e0428321da7b6bc992de51451bd6c1b";
     private static final String IPSTACK_URL = "http://api.ipstack.com/check?access_key=%s";
 
     public static JsonObject getUserLocation() {
