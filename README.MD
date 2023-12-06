@@ -1,1 +1,5 @@
-533e1baa54a8cf659fed8ec2b8a060f5
+The main goal of this program is to calculates the electricity bill price by processing user inputs. 
+We implemented some quality of life API's to help ease the use of the program as well as provide efficient 
+features to the user. API's such as "OpenWeatherMap" to get the weather temperature of the user's city.
+Another API is "IPSTACK" to get the user's location automatically without them writing anything.
+
