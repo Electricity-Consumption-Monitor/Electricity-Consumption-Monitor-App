@@ -1,10 +1,14 @@
-#Overview
+**Overview**
 The main goal of this program is to calculate the electricity bill price by processing user inputs. 
 We implemented some quality-of-life APIs to help ease the use of the program as well as provide efficient 
-features to the user. APIs such as "OpenWeatherMap" to get the weather temperature of the user's city.
+features to the user. 
+
+*APIs Used*
+APIs such as "OpenWeatherMap" to get the weather temperature of the user's city.
 Another API is "IPSTACK" to get the user's location automatically without them writing anything.
 We also applied 2 design patterns in our code and they are 'Singleton' and 'Decorator'.
 
+**How it works** 
 First, we can see the temperature of the user's city
 ![1](https://github.com/Electricity-Consumption-Monitor/Electricity-Consumption-Monitor-App/assets/98516524/cf473814-d223-44df-8993-88dba6a4c1d8)
 
