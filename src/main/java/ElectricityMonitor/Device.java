@@ -12,8 +12,9 @@ class Device {
     }
 
     public double calculateElectricityConsumption() {
-        double kilowattsConsumed = wattsConsumed / 1000;
-        return hoursOfWork * kilowattsConsumed;
+        double kilowattsConsumedPerDay = (wattsConsumed / 1000) * hoursOfWork;
+        int daysInMonth = 30;
+        return kilowattsConsumedPerDay * daysInMonth;
     }
 
 }
