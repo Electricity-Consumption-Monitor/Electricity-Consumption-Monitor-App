@@ -26,6 +26,9 @@ class Building implements ElectricityComponent {
         return totalElectricityBill * 0.18;
     }
 
+    public List<Room> getRooms() {
+        return rooms;
+    }
     public String getName() {
         return name;
     }
