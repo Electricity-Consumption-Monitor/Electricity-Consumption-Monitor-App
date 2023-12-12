@@ -1,10 +1,12 @@
 package ElectricityMonitor;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class LocationServiceTest {
 
-    @org.junit.Test
-    public void getUserLocation() {
+    @Test
+    public void getUserLocationWithError() {
+
+
     }
 }

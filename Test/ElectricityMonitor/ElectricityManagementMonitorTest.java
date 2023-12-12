@@ -1,22 +1,16 @@
 package ElectricityMonitor;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class ElectricityManagementMonitorTest {
 
-    @org.junit.Test
-    public void getInstance() {
+    @Test
+    public void testCalculateTotalElectricityBill() {
+
     }
 
-    @org.junit.Test
-    public void addComponent() {
-    }
+    @Test
+    public void testMain() {
 
-    @org.junit.Test
-    public void calculateTotalElectricityBill() {
-    }
-
-    @org.junit.Test
-    public void main() {
     }
 }
