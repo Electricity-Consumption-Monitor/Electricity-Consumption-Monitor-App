@@ -47,7 +47,7 @@ public class BuildingTest {
     public void testGetName() {
 
         Building building = new Building("Test Building");
-        
+
         assertEquals("Test Building", building.getName());
     }
 }
