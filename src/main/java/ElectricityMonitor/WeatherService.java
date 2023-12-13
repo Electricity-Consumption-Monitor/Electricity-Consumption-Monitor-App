@@ -12,6 +12,11 @@ public class WeatherService {
     private static final String API_KEY = "533e1baa54a8cf659fed8ec2b8a060f5";
     private static final String WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s&units=metric";
 
+    private static HttpClient httpClient = HttpClient.newHttpClient();
+
+    public static void setHttpClient(HttpClient customClient) {
+        httpClient = customClient;
+    }
     public static JsonObject getCurrentWeather(String city) {
         String url = String.format(WEATHER_URL, city, API_KEY);
         HttpClient client = HttpClient.newHttpClient();
