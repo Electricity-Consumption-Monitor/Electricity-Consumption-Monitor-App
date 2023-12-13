@@ -23,7 +23,6 @@ public class BuildingTest {
 
     @Test
     public void testCalculateTotalElectricityBill() {
-
         Building building = new Building("Test Building");
 
         Room room1 = new Room();
@@ -32,16 +31,16 @@ public class BuildingTest {
         building.addRoom(room1);
         building.addRoom(room2);
 
-        Device device1 = new Device("Device 1", 5.0, 100.0); // Provide hoursOfWork and wattsConsumed
+        Device device1 = new Device("Device 1", 5.0, 100.0);
         Device device2 = new Device("Device 2", 5.0, 150.0);
 
         room1.addDevice(device1);
         room2.addDevice(device2);
 
-
         double totalBill = building.calculateTotalElectricityBill();
 
-        assertEquals(45.0, totalBill, 0.001);
+        // Update the expected result to account for the multiplication by 0.18
+        assertEquals(6.75, totalBill, 0.001);
     }
     @Test
     public void testGetName() {

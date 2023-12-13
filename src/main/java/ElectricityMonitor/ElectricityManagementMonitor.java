@@ -37,35 +37,30 @@ public class ElectricityManagementMonitor {
 
         Scanner scanner = new Scanner(System.in);
 
+        // Assuming LocationService and WeatherService are correctly implemented
         JsonObject locationData = LocationService.getUserLocation();
         if (locationData != null) {
-
             String city = locationData.get("city").getAsString();
-
-
             JsonObject weatherData = WeatherService.getCurrentWeather(city);
             if (weatherData != null) {
                 double temperature = weatherData.getAsJsonObject("main").get("temp").getAsDouble();
-
                 if (temperature > 30) {
                     System.out.println("Current temperature is " + temperature + " Celsius. It's hot! Consider lowering your power consumption.");
-                } else if (temperature < 30) {
-                    System.out.println("Current temperature is " + temperature + " Celsius. The weather is good. No precautions needed ragarding the temperature");
+                } else {
+                    System.out.println("Current temperature is " + temperature + " Celsius. The weather is good. No precautions needed regarding the temperature");
                 }
             } else {
                 System.out.println("Unable to retrieve weather data for " + city);
             }
-
         }
 
         System.out.print("Enter the name of the building: ");
         String buildingName = scanner.nextLine();
         Building building = new Building(buildingName);
 
-
         System.out.print("Enter the number of rooms in " + buildingName + ": ");
         int numberOfRooms = scanner.nextInt();
-
+        scanner.nextLine(); // Consume the newline character after the number
 
         for (int roomNumber = 1; roomNumber <= numberOfRooms; roomNumber++) {
             System.out.println("\nRoom " + roomNumber + ":");
@@ -73,12 +68,11 @@ public class ElectricityManagementMonitor {
 
             System.out.print("Enter the number of devices in this room: ");
             int numberOfDevices = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline character after the number
 
             for (int deviceNumber = 1; deviceNumber <= numberOfDevices; deviceNumber++) {
                 System.out.println("\nDevice " + deviceNumber + ":");
-                scanner.nextLine();
 
-                // Get device details
                 System.out.print("Enter the name of the device: ");
                 String deviceName = scanner.nextLine();
 
@@ -87,13 +81,15 @@ public class ElectricityManagementMonitor {
 
                 System.out.print("Enter how many Watts does it consume: ");
                 double wattsConsumed = scanner.nextDouble();
+                if (scanner.hasNextLine()) {
+                    scanner.nextLine(); // Consume the newline character after the number
+                }
 
                 Device device = new Device(deviceName, hoursOfWork, wattsConsumed);
                 room.addDevice(device);
             }
 
             building.addRoom(room);
-
         }
 
 
