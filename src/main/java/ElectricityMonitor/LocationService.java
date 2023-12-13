@@ -9,13 +9,13 @@ import com.google.gson.JsonParser;
 
 public class LocationService {
 
-    private static final String IPSTACK_API_KEY = "2e0428321da7b6bc992de51451bd6c1b";
-    private static final String IPSTACK_URL = "http://api.ipstack.com/check?access_key=%s";
+    private static final String ABSTRACT_API_KEY = "ebcc1dae7f6f441ebcebb06baf0ff9ca";
+    private static final String ABSTRACT_API_URL = "https://ipgeolocation.abstractapi.com/v1/?api_key=ebcc1dae7f6f441ebcebb06baf0ff9ca";
 
     private static HttpClient httpClient = HttpClient.newHttpClient();
 
     public static JsonObject getUserLocation() {
-        String url = String.format(IPSTACK_URL, IPSTACK_API_KEY);
+        String url = String.format(ABSTRACT_API_URL, ABSTRACT_API_KEY);
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .build();
