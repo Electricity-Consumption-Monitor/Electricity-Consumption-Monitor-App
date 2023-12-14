@@ -5,7 +5,7 @@ features to the user.
 
 *APIs Used*
 APIs such as "OpenWeatherMap" to get the weather temperature of the user's city.
-Another API is "IPSTACK" to get the user's location automatically without them writing anything.
+Another API is "ABSTRACT API" to get the user's location automatically without them writing anything.
 We also applied 2 design patterns in our code and they are 'Singleton' and 'Decorator'.
 
 **How it works** 
